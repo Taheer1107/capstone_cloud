@@ -84,6 +84,11 @@ os.makedirs(app.config["REPORT_DIR"], exist_ok=True)
 db = SQLAlchemy(app)
 
 
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok"}), 200
+
+
 @app.errorhandler(Exception)
 def handle_unexpected_error(e):
     db.session.rollback()
