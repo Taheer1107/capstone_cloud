@@ -74,9 +74,18 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 AUTH_URL_KEYS = ["AUTH_API_URL", "AUTH_URL", "AUTH_BACKEND_URL", "BACKEND_URL"]
+
+
+def get_secret(name):
+    try:
+        return st.secrets.get(name)
+    except Exception:
+        return None
+
+
 API = next((os.environ.get(key) for key in AUTH_URL_KEYS if os.environ.get(key)), None)
 if not API:
-    API = next((st.secrets.get(key) for key in AUTH_URL_KEYS if st.secrets.get(key)), None)
+    API = next((get_secret(key) for key in AUTH_URL_KEYS if get_secret(key)), None)
 API = API or "http://127.0.0.1:5000"
 
 # --- STATE MGMT ---
