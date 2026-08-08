@@ -408,10 +408,16 @@ if not st.session_state.get("token"):
                 st.markdown('<div class="form-heading">Login</div>', unsafe_allow_html=True)
                 st.markdown('<div class="form-note">Enter your email and password to continue.</div>', unsafe_allow_html=True)
                 st.info(f"Auth backend URL: {API} (source: {API_SOURCE})")
+                if API_SOURCE == "fallback":
+                    st.warning(
+                        "The auth backend is not configured. "
+                        "Set AUTH_API_URL or AUTH_URL or AUTH_BACKEND_URL or BACKEND_URL in Streamlit Cloud, "
+                        "or run the auth backend locally at http://127.0.0.1:5000."
+                    )
                 with st.form("login_form"):
                     email = st.text_input("Username/Email address", key="login_email")
                     password = st.text_input("Password", type="password", key="login_password")
-                    login_sub = st.form_submit_button("Sign In")
+                    login_sub = st.form_submit_button("Sign In", disabled=(API_SOURCE == "fallback"))
                     if login_sub:
                         if not email or not password:
                             st.warning("Enter both email and password.")
