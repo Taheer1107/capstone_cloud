@@ -1,0 +1,1605 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+:root {
+    --bg: #0F172A;
+    --sidebar: #111827;
+    --card: #1E293B;
+    --border: #334155;
+    --primary: #3B82F6;
+    --primary-hover: #2563EB;
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --text: #FFFFFF;
+    --text-secondary: #CBD5E1;
+}
+
+html, body, [data-testid="stAppViewContainer"], .stApp {
+    background: var(--bg);
+    color: var(--text);
+}
+
+[data-testid="stAppViewContainer"] > .main,
+[data-testid="stMain"],
+[data-testid="stMainBlockContainer"] {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+[class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+#MainMenu,
+footer {
+    visibility: hidden;
+}
+
+header[data-testid="stHeader"] {
+    background: transparent;
+}
+
+.block-container {
+    max-width: 1500px;
+    padding: 2rem 2.4rem 3rem;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+section[data-testid="stSidebar"],
+section[data-testid="stSidebar"] > div {
+    background: var(--sidebar);
+}
+
+section[data-testid="stSidebar"] * {
+    color: var(--text) !important;
+}
+
+.brand-box {
+    padding-top: 8px;
+    padding-bottom: 20px;
+}
+
+.brand-main {
+    color: var(--primary) !important;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.brand-sub {
+    margin-top: 4px;
+    color: var(--text-secondary) !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Sidebar Buttons */
+.stSidebar .stButton button {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--primary);
+    color: var(--text) !important;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.stSidebar .stButton button:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 8px 18px rgba(59, 130, 246, .25);
+    transform: translateY(-1px);
+}
+
+/* Language Selector */
+.stSidebar .stSelectbox div[data-baseweb="select"] {
+    min-height: 45px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    background: var(--card) !important;
+}
+
+.stSidebar .stSelectbox span {
+    color: var(--text) !important;
+    font-weight: 600;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+h1, h2, h3 {
+    color: var(--text) !important;
+}
+
+h1 {
+    font-size: 36px !important;
+    font-weight: 700 !important;
+}
+
+h2 {
+    margin-bottom: 18px !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+}
+
+h3 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+}
+
+p, li, .stMarkdown, [data-testid="stMarkdownContainer"] {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+[data-testid="stMarkdownContainer"] strong,
+[data-testid="stMarkdownContainer"] b,
+.stCaptionContainer,
+[data-testid="stCaptionContainer"] {
+    color: var(--text-secondary) !important;
+}
+
+/* Hero */
+.hero-box {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 26px;
+}
+
+.hero-icon {
+    font-size: 56px;
+}
+
+.hero-title {
+    color: var(--text);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-sub {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Universal Page Header */
+.page-header {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-icon {
+    font-size: 42px;
+    line-height: 1;
+}
+
+.page-title {
+    color: var(--text);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.page-subtitle {
+    margin-top: 4px;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+.main-card,
+.lift-card,
+.search-card,
+.coverage-card,
+.financial-assessment-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .22);
+}
+
+.main-card {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.coverage-card,
+.financial-assessment-card {
+    margin-bottom: 22px;
+    padding: 20px;
+}
+
+.financial-assessment-card {
+    padding: 24px;
+}
+
+
+div[data-testid="stForm"] {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .22);
+}
+.lift-card {
+    min-height: 125px;
+    margin-bottom: 10px;
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.card-icon {
+    margin-bottom: 10px;
+    font-size: 34px;
+}
+
+.card-title {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.search-card {
+    margin-bottom: 28px;
+    padding: 20px;
+}
+
+.search-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.search-sub,
+.search-subtitle {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+/* Universal Search Section */
+.search-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 28px;
+    margin-bottom: 6px;
+}
+
+.search-header .icon {
+    font-size: 32px;
+}
+
+.search-header .title {
+    color: var(--text);
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.stButton button,
+[data-testid="stButton"] button,
+[data-testid="stFormSubmitButton"] button {
+
+    min-height:45px;
+    height:45px;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+    color:#FFFFFF !important;
+    -webkit-text-fill-color:#FFFFFF !important;
+
+    font-family:"Segoe UI",sans-serif !important;
+    font-size:15px !important;
+    font-weight:600 !important;
+    letter-spacing:0.2px;
+        line-height:1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:background .2s ease,
+               box-shadow .2s ease,
+               transform .2s ease;
+}
+
+.stButton button:hover,
+[data-testid="stButton"] button:hover,
+[data-testid="stFormSubmitButton"] button:hover{
+
+    background:var(--primary-hover);
+
+    box-shadow:0 8px 18px rgba(59,130,246,.25);
+
+    transform:translateY(-1px);
+}
+
+.stButton button *,
+[data-testid="stButton"] button *,
+[data-testid="stFormSubmitButton"] button *{
+
+    color:#FFFFFF !important;
+    -webkit-text-fill-color:#FFFFFF !important;
+
+    font-family:"Segoe UI",sans-serif !important;
+    font-size:15px !important;
+    font-weight:600 !important;
+    letter-spacing:0.2px;
+    }
+
+/* =====================================================
+   INPUTS
+===================================================== */
+label {
+    color: var(--text) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+.stTextInput input,
+.stDateInput input,
+.stTextArea textarea {
+    min-height: 45px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    font-size: 16px !important;
+}
+
+/* Streamlit's Base Web controls need direct styling in addition to widget wrappers. */
+[data-testid="stSelectbox"] [data-baseweb="select"],
+[data-testid="stTextInput"] [data-baseweb="input"],
+[data-testid="stDateInput"] [data-baseweb="input"],
+[data-testid="stTextArea"] textarea,
+[data-baseweb="select"] {
+
+    min-height:45px !important;
+    box-sizing:border-box !important;
+    border:1px solid var(--border) !important;
+    border-radius:10px !important;
+    background:var(--card) !important;
+    box-shadow:none !important;
+
+}
+
+[data-testid="stSelectbox"] [data-baseweb="select"] > div,
+[data-testid="stSelectbox"] [data-baseweb="select"] input,
+[data-testid="stTextInput"] [data-baseweb="input"] input,
+[data-testid="stNumberInput"] [data-baseweb="input"] input,
+[data-testid="stDateInput"] [data-baseweb="input"] input,
+[data-testid="stTextArea"] textarea,
+[data-baseweb="select"] > div,
+[data-baseweb="input"] input,
+[data-baseweb="base-input"] input {
+    min-height: 43px !important;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text) !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stSelectbox"] [data-baseweb="select"] input::placeholder,
+[data-testid="stTextInput"] input::placeholder,
+[data-testid="stNumberInput"] input::placeholder,
+[data-testid="stDateInput"] input::placeholder,
+[data-testid="stTextArea"] textarea::placeholder {
+    color: #94A3B8 !important;
+    -webkit-text-fill-color: #94A3B8 !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stSelectbox"] [data-baseweb="select"]:focus-within,
+[data-testid="stTextInput"] [data-baseweb="input"]:focus-within,
+[data-testid="stNumberInput"] [data-baseweb="input"]:focus-within,
+[data-testid="stDateInput"] [data-baseweb="input"]:focus-within,
+[data-testid="stTextArea"] textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .18) !important;
+}
+
+/* Keep a caret out of inactive fields; only editable fields reveal it on focus. */
+[data-testid="stSelectbox"] input,
+[data-testid="stTextInput"] input:not(:focus),
+[data-testid="stNumberInput"] input:not(:focus),
+[data-testid="stDateInput"] input:not(:focus) {
+    caret-color: transparent !important;
+}
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stNumberInput"] input:focus,
+[data-testid="stDateInput"] input:focus {
+    caret-color: var(--text) !important;
+}
+
+[data-testid="stTextInput"] [data-baseweb="input"]:has(input:disabled),
+[data-testid="stTextInput"] [data-baseweb="input"]:has(input:disabled) input {
+    min-height: 45px !important;
+    border-color: var(--border) !important;
+    border-radius: 10px !important;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text) !important;
+    opacity: 1 !important;
+}
+
+[data-baseweb="input"],
+[data-baseweb="base-input"],
+[data-baseweb="input"] input,
+[data-baseweb="base-input"] input,
+[data-baseweb="select"] input,
+[data-baseweb="calendar"],
+[data-baseweb="calendar"] * {
+    border-color: var(--border) !important;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text) !important;
+}
+
+[data-baseweb="input"]:focus-within,
+[data-baseweb="base-input"]:focus-within {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .18) !important;
+}
+
+.stTextInput input::placeholder,
+.stDateInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: #94A3B8 !important;
+}
+
+.stTextInput input:focus,
+.stDateInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .18) !important;
+}
+
+.stTextInput input:disabled,
+.stDateInput input:disabled,
+[data-testid="stTextInput"] input:disabled,
+[data-testid="stNumberInput"] input:disabled,
+[data-testid="stDateInput"] input:disabled {
+    border-color: var(--border) !important;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text) !important;
+    opacity: 1 !important;
+}
+
+hr,
+[data-testid="stDivider"] {
+    border-color: var(--border) !important;
+}
+
+
+.stSelectbox div[data-baseweb="select"] {
+    min-height: 45px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    background: var(--card) !important;
+    box-shadow: none !important;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.stSelectbox div[data-baseweb="select"]:hover,
+.stSelectbox div[data-baseweb="select"]:focus-within {
+    border-color: var(--primary) !important;
+}
+
+.stSelectbox div[data-baseweb="select"]:focus-within {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .18) !important;
+}
+
+.stSelectbox span,
+.stSelectbox input,
+.stSelectbox svg,
+[data-baseweb="popover"] * {
+    color: var(--text) !important;
+}
+
+[data-baseweb="popover"],
+[role="listbox"] {
+    border: 1px solid var(--border) !important;
+    background: var(--card) !important;
+}
+
+body [data-baseweb="popover"] > div,
+body [data-baseweb="popover"] [role="listbox"],
+body [data-baseweb="popover"] ul {
+    background: var(--card) !important;
+}
+
+[role="option"] {
+    background: var(--card) !important;
+    color: var(--text) !important;
+}
+
+[role="option"]:hover,
+[role="option"][aria-selected="false"]:hover {
+    background: var(--border) !important;
+    color: var(--text) !important;
+}
+
+[role="option"][aria-selected="true"] {
+    background: var(--primary) !important;
+    color: var(--text) !important;
+}
+
+[role="option"][aria-selected="true"]:hover {
+    background: var(--primary-hover) !important;
+}
+
+body [data-baseweb="popover"] [role="option"],
+body [data-baseweb="popover"] [role="option"] * {
+    color: var(--text) !important;
+}
+
+[data-testid="stSelectbox"] svg,
+[data-testid="stSelectbox"] [data-baseweb="select"] svg {
+    fill: var(--text-secondary) !important;
+    color: var(--text-secondary) !important;
+    opacity: 1 !important;
+}
+
+[data-baseweb="select"] [data-testid="stIconMaterial"] {
+    color: var(--text-secondary) !important;
+}
+
+[data-testid="stFormSubmitButton"] button {
+    width: 100%;
+    min-height: 45px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--primary);
+    color: var(--text) !important;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+[data-testid="stFormSubmitButton"] button:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 8px 18px rgba(59, 130, 246, .25);
+    transform: translateY(-1px);
+}
+
+[data-testid="stDateInput"] svg,
+[data-testid="stDateInput"] [data-testid="stIconMaterial"] {
+    fill: var(--text-secondary) !important;
+    color: var(--text-secondary) !important;
+}
+
+[data-baseweb="calendar"],
+[data-baseweb="calendar"] > div {
+    border: 1px solid var(--border) !important;
+    border-radius: 14px !important;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, .35) !important;
+}
+
+[data-baseweb="calendar"] *,
+[data-baseweb="calendar"] [role="grid"],
+[data-baseweb="calendar"] [role="row"],
+[data-baseweb="calendar"] [role="gridcell"] {
+    background-color: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+[data-baseweb="calendar"] button,
+[data-baseweb="calendar"] [role="gridcell"] > div {
+    border-radius: 8px !important;
+    background: transparent !important;
+    color: var(--text) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+[data-baseweb="calendar"] button:hover,
+[data-baseweb="calendar"] [role="gridcell"]:hover,
+[data-baseweb="calendar"] [role="gridcell"] > div:hover {
+    background: var(--border) !important;
+    color: var(--text) !important;
+}
+
+[data-baseweb="calendar"] button[aria-selected="true"],
+[data-baseweb="calendar"] [aria-selected="true"],
+[data-baseweb="calendar"] [data-selected="true"],
+[data-baseweb="calendar"] [aria-current="date"] {
+    border-color: var(--primary) !important;
+    background: var(--primary) !important;
+    color: #FFFFFF !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+[data-baseweb="calendar"] button[aria-selected="true"] *,
+[data-baseweb="calendar"] [aria-selected="true"] *,
+[data-baseweb="calendar"] [data-selected="true"] *,
+[data-baseweb="calendar"] [aria-current="date"] * {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+[data-baseweb="calendar"] button::before,
+[data-baseweb="calendar"] button::after,
+[data-baseweb="calendar"] [aria-selected="true"]::before,
+[data-baseweb="calendar"] [aria-selected="true"]::after,
+[data-baseweb="calendar"] [data-selected="true"]::before,
+[data-baseweb="calendar"] [data-selected="true"]::after {
+    display: none !important;
+    box-shadow: none !important;
+}
+
+[data-baseweb="calendar"] [data-baseweb="select"],
+[data-baseweb="calendar"] [data-baseweb="input"] {
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    background: #0F172A !important;
+    color: var(--text) !important;
+}
+
+/* =====================================================
+   METRICS
+===================================================== */
+[data-testid="metric-container"] {
+    min-height: 150px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .22);
+}
+
+.main-card [data-testid="metric-container"] {
+    min-height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+[data-testid="metric-container"] label {
+    color: var(--text-secondary) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color: var(--text) !important;
+    font-size: 42px !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+}
+
+[data-testid="metric-container"] [data-testid="stMetricDelta"] {
+    color: var(--success) !important;
+}
+
+.estimated-cost-card {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 14px;
+    background: var(--card);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .22);
+    font-size:42px;
+    font-weight:800;
+}
+
+.estimated-cost-label {
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.estimated-cost-value {
+    margin-top: 8px;
+    color: var(--text);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* =====================================================
+   TABLES
+===================================================== */
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+[data-testid="stDataFrame"] *,
+[data-testid="stTable"] * {
+    color: var(--text) !important;
+}
+
+[data-testid="stDataFrame"] [role="columnheader"],
+[data-testid="stTable"] thead th {
+    background: #111827 !important;
+}
+
+[data-testid="stDataFrame"] [role="gridcell"],
+[data-testid="stTable"] td {
+    background: var(--card) !important;
+}
+
+div[data-testid="stAlert"] {
+    border-radius: 10px;
+}
+
+/* =====================================================
+   CHARTS
+===================================================== */
+div[data-testid="stProgressBar"] {
+    background: #334155;
+    border-radius: 999px;
+}
+
+div[data-testid="stProgressBar"] > div > div {
+    background: linear-gradient(90deg, var(--primary), #60A5FA);
+    border-radius: 999px;
+}
+
+.ai-report h2 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text) !important;
+    font-weight: 600;
+}
+
+.ai-report ul {
+    margin-top: 10px;
+    margin-left: 18px;
+}
+
+.ai-report p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.js-plotly-plot,
+.js-plotly-plot .plotly,
+.js-plotly-plot .svg-container {
+    background: transparent !important;
+}
+
+.js-plotly-plot text {
+    fill: var(--text) !important;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
+    .block-container {
+        padding: 1rem;
+    }
+
+    .hero-title,
+    .page-title {
+        font-size: 30px;
+    }
+
+    .hero-icon {
+        font-size: 42px;
+    }
+
+    h2,
+    .search-header .title {
+        font-size: 24px !important;
+    }
+
+    section[data-testid="stSidebar"] {
+        width: 280px;
+    }
+}
+
+/* Streamlit sidebar toggle */
+[data-testid="stSidebarCollapseButton"] button,
+[data-testid="stSidebarCollapsedControl"] button,
+button[data-testid="stSidebarCollapseButton"],
+button[data-testid="stSidebarCollapsedControl"],
+button[kind="header"] {
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    opacity: 1 !important;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+[data-testid="stSidebarCollapseButton"] button svg,
+[data-testid="stSidebarCollapsedControl"] button svg,
+button[data-testid="stSidebarCollapseButton"] svg,
+button[data-testid="stSidebarCollapsedControl"] svg,
+button[kind="header"] svg {
+    fill: var(--text) !important;
+    stroke: var(--text) !important;
+    color: var(--text) !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stSidebarCollapseButton"] button:hover,
+[data-testid="stSidebarCollapsedControl"] button:hover,
+button[data-testid="stSidebarCollapseButton"]:hover,
+button[data-testid="stSidebarCollapsedControl"]:hover,
+button[kind="header"]:hover {
+    border-color: var(--primary) !important;
+    background: var(--primary) !important;
+    box-shadow: 0 6px 14px rgba(59, 130, 246, .25);
+}
+.metric-card {
+    min-height: 120px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(30, 41, 59, .9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .20);
+}
+
+.metric-title {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.metric-value {
+    margin-top: 12px;
+    color: var(--text);
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.metric-green .metric-value {
+    color: #86EFAC;
+}
+
+.metric-purple .metric-value {
+    color: #C4B5FD;
+}
+
+.coverage-card-header {
+    margin-bottom: 16px;
+}
+
+.coverage-card-title {
+    color: var(--text);
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.coverage-card-subtitle,
+.coverage-amount-label,
+.scheme-label,
+.assessment-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.coverage-card-covered {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.coverage-card-covered .coverage-amount-value {
+    margin-top: 6px;
+    color: #60A5FA;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.scheme-amount-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.scheme-amount-card {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(15, 23, 42, .42);
+}
+
+.scheme-value {
+    margin-top: 8px;
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.scheme-amount-card.green .scheme-value {
+    color: #86EFAC;
+}
+
+.scheme-amount-card.blue .scheme-value {
+    color: #93C5FD;
+}
+
+.financial-assessment-card h2,
+.financial-assessment-card h3 {
+    margin-top: 22px !important;
+    margin-bottom: 10px !important;
+    color: var(--text) !important;
+}
+
+.financial-assessment-card h2:first-child,
+.financial-assessment-card h3:first-child {
+    margin-top: 0 !important;
+}
+
+.financial-assessment-card p,
+.financial-assessment-card li {
+    color: var(--text-secondary) !important;
+    line-height: 1.7;
+}
+
+.financial-report strong {
+    color: var(--text);
+}
+
+.financial-report ul,
+.financial-report ol {
+    margin-top: 8px;
+    margin-bottom: 14px;
+    padding-left: 22px;
+}
+.payment-card{
+
+    background:#243244;
+
+    border:1px solid #334155;
+
+    border-radius:14px;
+
+    padding:22px;
+
+    min-height:130px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.payment-title{
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    color:#CBD5E1;
+
+}
+
+.payment-value{
+
+    margin-top:12px;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:white;
+
+}
+
+.admin-qty-value {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+
+
+[data-testid="stButton"] button:has(p:only-child) {
+    align-items: center !important;
+    justify-content: center !important;
+}
+@media (max-width: 700px) {
+    .scheme-amount-grid {
+        display: block;
+    }
+
+    .scheme-amount-card + .scheme-amount-card {
+        margin-top: 14px;
+    }
+}
+
+/* =====================================================
+   ADMIN UI CONSISTENCY OVERRIDES
+===================================================== */
+/* Calendar popup */
+[data-baseweb="popover"],
+[data-baseweb="popover"] > div{
+    background:var(--card) !important;
+}
+
+/* Main calendar */
+[data-baseweb="calendar"],
+[data-baseweb="calendar"] *{
+
+    background:var(--card) !important;
+    color:var(--text) !important;
+
+    border-color:var(--border) !important;
+
+    box-shadow:none !important;
+}
+
+/* Month / Year selectors */
+[data-baseweb="calendar"] [data-baseweb="select"],
+[data-baseweb="calendar"] [data-baseweb="input"]{
+
+    background:#0F172A !important;
+
+    border:1px solid var(--border) !important;
+
+    border-radius:8px !important;
+}
+
+/* Every day button */
+[data-baseweb="calendar"] button{
+
+    background:transparent !important;
+
+    color:white !important;
+
+    border-radius:999px !important;
+
+    transition:none !important;
+}
+
+/* No hover effect */
+[data-baseweb="calendar"] button:hover{
+
+    background:transparent !important;
+
+    color:white !important;
+}
+
+/* Remove keyboard outline */
+[data-baseweb="calendar"] button:focus,
+[data-baseweb="calendar"] button:focus-visible{
+
+    outline:none !important;
+
+    box-shadow:none !important;
+}
+
+/* Remove BaseWeb pseudo elements */
+[data-baseweb="calendar"] button::before,
+[data-baseweb="calendar"] button::after,
+[data-baseweb="calendar"] [role="gridcell"]::before,
+[data-baseweb="calendar"] [role="gridcell"]::after{
+
+    display:none !important;
+}
+
+/* Selected day */
+[data-baseweb="calendar"] button[aria-selected="true"],
+[data-baseweb="calendar"] [aria-selected="true"]{
+
+    background:#EF4444 !important;
+
+    color:white !important;
+}
+
+/* Days outside current month */
+[data-baseweb="calendar"] button[aria-disabled="true"]{
+
+    visibility:hidden !important;
+
+    pointer-events:none !important;
+
+    background:transparent !important;
+}
+
+/* Empty placeholders */
+[data-baseweb="calendar"] [role="gridcell"]:empty,
+[data-baseweb="calendar"] [role="gridcell"]>div:empty{
+
+    visibility:hidden !important;
+}
+/* ---------- Number Input Buttons ---------- */
+/* Minus Button */
+button[data-testid="stNumberInputStepDown"]{
+
+    background:#1E293B !important;
+    color:white !important;
+    border:none !important;
+
+    width:40px !important;
+}
+
+/* Plus Button */
+button[data-testid="stNumberInputStepUp"]{
+
+    background:#1E293B !important;
+    color:white !important;
+    border:none !important;
+
+    width:40px !important;
+}
+
+/* Hover */
+button[data-testid="stNumberInputStepDown"]:hover,
+button[data-testid="stNumberInputStepUp"]:hover{
+
+    background:#334155 !important;
+}
+
+/* SVG Icons */
+button[data-testid="stNumberInputStepDown"] svg,
+button[data-testid="stNumberInputStepUp"] svg{
+
+    fill:white !important;
+    color:white !important;
+}
+/* ==========================================
+   Coverage Selection Sections
+========================================== */
+
+.section-title{
+
+    margin: top 8px;
+    margin-bottom:12px;
+
+    color:#CBD5E1;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+}
+
+.section-divider{
+
+    margin:22px 0;
+
+    border-top:1px solid #334155;
+}
+
+/* Hide Streamlit radio labels on Coverage Selection page */
+[data-testid="stRadio"] label[data-testid="stWidgetLabel"]{
+    display:none;
+}
+/* Coverage radio spacing */
+
+[data-testid="stRadio"] > div{
+    gap:10px;
+}
+
+[data-testid="stRadio"] label{
+    padding:4px 0;
+}
+/* Match radio accent to app theme */
+
+input[type="radio"]{
+    accent-color:#3B82F6;
+}
+/* ===========================================
+   ADMIN SUMMARY CARDS
+=========================================== */
+
+.admin-payment-card{
+
+    background:#243244;
+
+    border:1px solid #334155;
+
+    border-radius:14px;
+
+    padding:18px 22px;
+
+    min-height:105px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    margin-bottom:12px;
+
+    transition:0.2s ease;
+}
+
+.admin-payment-card:hover{
+
+    border-color:#4F8EF7;
+
+    transform:translateY(-2px);
+}
+
+.admin-payment-title{
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    color:#60A5FA;
+}
+
+.admin-payment-value{
+
+    margin-top:8px;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:white;
+
+    line-height:1.15;
+}
+/* ===========================================
+   ADMIN BILLING TABLE
+=========================================== */
+
+.billing-card{
+
+    background:#243244;
+
+    border:1px solid #334155;
+
+    border-radius:14px;
+
+    padding:18px 24px;
+
+    margin-top:18px;
+
+    margin-bottom:20px;
+
+}
+
+.billing-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    font-size:17px;
+
+}
+.billing-row span:first-child{
+    font-size:24px;      /* Increase title size */
+    font-weight:600;
+    color:#E2E8F0;
+}
+
+.billing-row span:last-child{
+    font-size:24px;      /* Increase amount size */
+    font-weight:700;
+    color:#FFFFFF;
+}
+.billing-row:last-child span:first-child{
+    color:#60A5FA;
+    font-size:26px;
+    font-weight:700;
+}
+
+.billing-row:last-child span:last-child{
+    color:#60A5FA;
+    font-size:28px;
+    font-weight:800;
+}
+/* ===========================================
+   ADMIN BILLING BREAKDOWN
+=========================================== */
+
+.billing-card{
+
+    background:#243244;
+
+    border:1px solid #334155;
+
+    border-radius:14px;
+
+    padding:20px 26px;
+
+    margin-top:18px;
+
+    margin-bottom:24px;
+
+    transition:0.2s ease;
+
+}
+
+.billing-card:hover{
+
+    border-color:#4F8EF7;
+
+}
+
+.billing-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    font-size:17px;
+
+    color:#E2E8F0;
+
+}
+
+.billing-row span:first-child{
+
+    color:#CBD5E1;
+
+    font-weight:500;
+
+}
+
+.billing-row span:last-child{
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.billing-row:last-child{
+
+    border-bottom:none;
+
+    margin-top:6px;
+
+    padding-top:20px;
+
+    color:#60A5FA;
+
+    font-size:19px;
+
+    font-weight:800;
+
+}
+
+.billing-row:last-child span:first-child{
+
+    color:#60A5FA;
+
+}
+
+.billing-row:last-child span:last-child{
+
+    color:#60A5FA;
+
+}
+/* ===========================================
+   DOWNLOAD PDF BUTTON
+=========================================== */
+
+[data-testid="stDownloadButton"] > button {
+
+    width: 100% !important;
+
+    height: 46px !important;
+
+    border-radius: 10px !important;
+
+    border: none !important;
+
+    background: #3B82F6 !important;
+
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+
+    font-size: 15px !important;
+
+    font-weight: 600 !important;
+
+    transition: all 0.2s ease;
+}
+
+[data-testid="stDownloadButton"] > button:hover {
+
+    background: #2563EB !important;
+
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+}
+
+[data-testid="stDownloadButton"] > button * {
+
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+}
+.summary-card{
+
+    background:#243244;
+
+    border:1px solid #334155;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    min-height:95px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    margin-bottom:12px;
+}
+
+.summary-title{
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+}
+
+.summary-value{
+
+    color:white !important;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    display:block;
+}
+/* Qty column number input */
+.qty-box{
+    width:105px;
+    margin-left:-45px;
+}
+
+.qty-box [data-testid="stNumberInput"]{
+    width:105px !important;
+}
+
+.qty-box button[data-testid="stNumberInputStepDown"],
+.qty-box button[data-testid="stNumberInputStepUp"]{
+    display:flex !important;
+}
+/* ===========================================
+   CUSTOM QUANTITY CONTROL
+=========================================== */
+
+.qty-display{
+
+    height:45px;
+
+    border:1px solid #334155;
+
+    border-radius:10px;
+
+    background:#1E293B;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+    font-weight:700;
+}
+
+/* Minus button */
+.qty-control button{
+
+    background:#1E293B !important;
+
+    color:#FFFFFF !important;
+    -webkit-text-fill-color:#FFFFFF !important;
+
+    border:1px solid #334155 !important;
+
+    border-radius:10px !important;
+
+    width:42px !important;
+    height:42px !important;
+
+    padding:0 !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    font-size:22px !important;
+    font-weight:700 !important;
+
+    line-height:1 !important;
+}
+
+.qty-control button:hover{
+
+    background:#334155 !important;
+}
+
+.qty-control button *{
+
+    color:white !important;
+    -webkit-text-fill-color:white !important;
+}

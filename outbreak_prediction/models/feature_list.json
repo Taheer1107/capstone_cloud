@@ -1,0 +1,19 @@
+[
+  "global_week",
+  "week_of_year",
+  "state_enc",
+  "disease_enc",
+  "cases",
+  "previous_week_cases",
+  "previous_2_week_average",
+  "cases_lag2",
+  "cases_lag3",
+  "cases_lag4",
+  "rolling_mean_3",
+  "rolling_mean_5",
+  "rolling_std_3",
+  "growth_rate",
+  "peak_flag",
+  "month_group",
+  "case_fatality_rate"
+]

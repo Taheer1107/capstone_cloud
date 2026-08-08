@@ -1,0 +1,17 @@
+# Minimal shared requirements for the Smart Hospital Portal workspace
+# Install these in a Python 3.11 virtualenv before running multiple apps.
+
+streamlit>=1.24.0
+fastapi>=0.95.0
+uvicorn[standard]>=0.22.0
+pandas
+numpy
+scikit-learn
+joblib
+xgboost
+lightgbm
+catboost
+shap
+requests
+python-multipart
+jinja2

@@ -1,0 +1,183 @@
+
+<div id="viewer-wrap" style="position:relative;width:100%;height:560px;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);overflow:hidden;">
+  <canvas id="c" style="width:100%;height:100%;display:block;"></canvas>
+  <div id="labels" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;"></div>
+  <div id="info-box" style="display:none;position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 18px;font-size:13px;color:var(--color-text-primary);text-align:center;pointer-events:none;white-space:nowrap;"></div>
+  <div style="position:absolute;top:12px;left:12px;font-size:12px;color:var(--color-text-secondary);">Drag to rotate · Scroll to zoom</div>
+  <div id="loading-msg" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--color-text-secondary);">Loading model...</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const BODY_REGIONS = [
+  { name: "Head",           y:  0.94, x: -0.04, z: 0.02, color: "#185FA5", desc: "Head & face region" },
+  { name: "Neck",           y:  0.80, x: -0.04, z: 0.02, color: "#3B6D11", desc: "Neck & cervical area" },
+  { name: "Left shoulder",  y:  0.64, x: -0.28, z: 0.04, color: "#993C1D", desc: "Left shoulder joint" },
+  { name: "Right shoulder", y:  0.64, x:  0.20, z: 0.04, color: "#993C1D", desc: "Right shoulder joint" },
+  { name: "Chest",          y:  0.50, x: -0.04, z: 0.10, color: "#533AB7", desc: "Thorax / chest" },
+  { name: "Left arm",       y:  0.38, x: -0.36, z: 0.02, color: "#0F6E56", desc: "Left upper arm" },
+  { name: "Right arm",      y:  0.38, x:  0.28, z: 0.02, color: "#0F6E56", desc: "Right upper arm" },
+  { name: "Abdomen",        y:  0.32, x: -0.04, z: 0.10, color: "#854F0B", desc: "Abdominal region" },
+  { name: "Left hand",      y:  0.18, x: -0.38, z: 0.03, color: "#993556", desc: "Left hand" },
+  { name: "Right hand",     y:  0.18, x:  0.30, z: 0.03, color: "#993556", desc: "Right hand" },
+  { name: "Pelvis",         y:  0.18, x: -0.04, z: 0.08, color: "#185FA5", desc: "Hip / pelvis region" },
+  { name: "Left thigh",     y:  0.04, x: -0.16, z: 0.06, color: "#3B6D11", desc: "Left upper leg" },
+  { name: "Right thigh",    y:  0.04, x:  0.08, z: 0.06, color: "#3B6D11", desc: "Right upper leg" },
+  { name: "Left knee",      y: -0.14, x: -0.15, z: 0.06, color: "#A32D2D", desc: "Left knee joint" },
+  { name: "Right knee",     y: -0.14, x:  0.07, z: 0.06, color: "#A32D2D", desc: "Right knee joint" },
+  { name: "Left shin",      y: -0.32, x: -0.14, z: 0.04, color: "#854F0B", desc: "Left lower leg" },
+  { name: "Right shin",     y: -0.32, x:  0.06, z: 0.04, color: "#854F0B", desc: "Right lower leg" },
+  { name: "Left foot",      y: -0.48, x: -0.16, z: 0.03, color: "#533AB7", desc: "Left foot" },
+  { name: "Right foot",     y: -0.48, x:  0.08, z: 0.03, color: "#533AB7", desc: "Right foot" },
+];
+
+let scene, camera, renderer, model, isDragging = false;
+let prevMouse = {x:0, y:0}, rotX = 0, rotY = 0;
+let labelDivs = [];
+const wrap = document.getElementById("viewer-wrap");
+const canvas = document.getElementById("c");
+const labelsEl = document.getElementById("labels");
+const infoBox = document.getElementById("info-box");
+
+function init() {
+  const W = wrap.clientWidth, H = wrap.clientHeight;
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setSize(W, H);
+  renderer.setClearColor(0x000000, 0);
+
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(45, W/H, 0.01, 100);
+  camera.position.set(0, 0, 3.2);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(1, 2, 3);
+  scene.add(dir);
+
+  loadGLB();
+  createLabels();
+  animate();
+  bindEvents();
+}
+
+function loadGLB() {
+  const s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js";
+  s.onload = () => {
+    const loader = new THREE.GLTFLoader();
+    const url = "/api/blob/mnt/user-data/uploads/partpacker_20260418_141146.glb";
+    fetch("/mnt/user-data/uploads/partpacker_20260418_141146.glb")
+      .then(r => r.arrayBuffer())
+      .then(buf => loader.parse(buf, "", gltf => {
+        model = gltf.scene;
+        model.traverse(o => {
+          if (o.isMesh) {
+            o.material = new THREE.MeshPhongMaterial({color:0xd4a88a, specular:0x444444, shininess:20});
+          }
+        });
+        const box = new THREE.Box3().setFromObject(model);
+        const ctr = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        model.position.sub(ctr);
+        if (size.y > 0) {
+          model.scale.setScalar(1.85 / size.y);
+        }
+        scene.add(model);
+        document.getElementById("loading-msg").style.display = "none";
+      }, e => fallback()))
+      .catch(() => fallback());
+  };
+  s.onerror = () => fallback();
+  document.head.appendChild(s);
+}
+
+function fallback() {
+  document.getElementById("loading-msg").textContent = "";
+  const geo = new THREE.CapsuleGeometry ? new THREE.CapsuleGeometry(0.28,1.1,8,16) : new THREE.CylinderGeometry(0.28,0.28,1.4,16);
+  model = new THREE.Mesh(geo, new THREE.MeshPhongMaterial({color:0xd4a88a}));
+  scene.add(model);
+  document.getElementById("loading-msg").style.display = "none";
+}
+
+function createLabels() {
+  BODY_REGIONS.forEach((r, i) => {
+    const d = document.createElement("div");
+    d.style.cssText = `position:absolute;pointer-events:auto;cursor:pointer;width:0;height:0;`;
+    const dot = document.createElement("div");
+    dot.style.cssText = `position:absolute;left:0;top:0;width:10px;height:10px;border-radius:50%;background:${r.color};border:1.5px solid white;transform:translate(-50%,-50%);box-sizing:border-box;`;
+    const lbl = document.createElement("span");
+    lbl.textContent = r.name;
+    const labelSide = r.x < 0 ? "right:10px;" : "left:10px;";
+    lbl.style.cssText = `position:absolute;top:0;${labelSide}transform:translateY(-50%);font-size:11px;font-weight:500;color:var(--color-text-primary);background:var(--color-background-primary);padding:2px 6px;border-radius:4px;border:0.5px solid var(--color-border-tertiary);white-space:nowrap;`;
+    d.appendChild(dot);
+    d.appendChild(lbl);
+    d.addEventListener("click", () => {
+      infoBox.textContent = `${r.name}: ${r.desc}`;
+      infoBox.style.display = "block";
+      setTimeout(() => infoBox.style.display = "none", 2500);
+    });
+    labelsEl.appendChild(d);
+    labelDivs.push({el:d, region:r});
+  });
+}
+
+function updateLabels() {
+  const W = wrap.clientWidth, H = wrap.clientHeight;
+  labelDivs.forEach(({el, region}) => {
+    const v = new THREE.Vector3(region.x, region.y, region.z);
+    if (model) {
+      v.applyEuler(new THREE.Euler(rotX, rotY, 0, "YXZ"));
+    }
+    v.project(camera);
+    const px = (v.x * 0.5 + 0.5) * W;
+    const py = (-v.y * 0.5 + 0.5) * H;
+    el.style.left = px + "px";
+    el.style.top = py + "px";
+    el.style.transform = "none";
+    el.style.display = (v.z < 1) ? "block" : "none";
+  });
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  if (model) {
+    model.rotation.y = rotY;
+    model.rotation.x = rotX;
+  }
+  renderer.render(scene, camera);
+  updateLabels();
+}
+
+function bindEvents() {
+  canvas.addEventListener("mousedown", e => { isDragging=true; prevMouse={x:e.clientX,y:e.clientY}; });
+  window.addEventListener("mouseup", () => isDragging=false);
+  window.addEventListener("mousemove", e => {
+    if (!isDragging) return;
+    rotY += (e.clientX - prevMouse.x) * 0.01;
+    rotX += (e.clientY - prevMouse.y) * 0.01;
+    rotX = Math.max(-Math.PI/2, Math.min(Math.PI/2, rotX));
+    prevMouse = {x:e.clientX, y:e.clientY};
+  });
+  canvas.addEventListener("wheel", e => {
+    camera.position.z = Math.max(1.2, Math.min(6, camera.position.z + e.deltaY * 0.005));
+    e.preventDefault();
+  }, {passive:false});
+  canvas.addEventListener("touchstart", e => { isDragging=true; prevMouse={x:e.touches[0].clientX,y:e.touches[0].clientY}; });
+  canvas.addEventListener("touchend", () => isDragging=false);
+  canvas.addEventListener("touchmove", e => {
+    if (!isDragging) return;
+    rotY += (e.touches[0].clientX - prevMouse.x) * 0.012;
+    rotX += (e.touches[0].clientY - prevMouse.y) * 0.012;
+    prevMouse = {x:e.touches[0].clientX, y:e.touches[0].clientY};
+    e.preventDefault();
+  }, {passive:false});
+  window.addEventListener("resize", () => {
+    const W=wrap.clientWidth, H=wrap.clientHeight;
+    camera.aspect = W/H; camera.updateProjectionMatrix();
+    renderer.setSize(W,H);
+  });
+}
+
+init();
+</script>

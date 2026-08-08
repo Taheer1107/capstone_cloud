@@ -1,0 +1,4 @@
+# Recommended: use Cost_predictor/backend/requirements.txt which exists in the repository.
+# Minimal additions for frontend
+streamlit
+requests
