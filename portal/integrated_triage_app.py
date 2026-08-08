@@ -12,10 +12,24 @@ AUTH_URL_KEYS = [
     "BACKEND_URL",
 ]
 
-API = next((os.environ.get(key) for key in AUTH_URL_KEYS if os.environ.get(key)), None)
+API = None
+API_SOURCE = None
+for key in AUTH_URL_KEYS:
+    if os.environ.get(key):
+        API = os.environ.get(key)
+        API_SOURCE = f"env:{key}"
+        break
+
 if not API:
-    API = next((st.secrets.get(key) for key in AUTH_URL_KEYS if st.secrets.get(key)), None)
-API = API or "http://127.0.0.1:5000"
+    for key in AUTH_URL_KEYS:
+        if st.secrets.get(key):
+            API = st.secrets.get(key)
+            API_SOURCE = f"secrets:{key}"
+            break
+
+if not API:
+    API = "http://127.0.0.1:5000"
+    API_SOURCE = "fallback"
 
 MODULES = [
     {
@@ -393,6 +407,7 @@ if not st.session_state.get("token"):
                 st.markdown('<div class="login-form-area">', unsafe_allow_html=True)
                 st.markdown('<div class="form-heading">Login</div>', unsafe_allow_html=True)
                 st.markdown('<div class="form-note">Enter your email and password to continue.</div>', unsafe_allow_html=True)
+                st.info(f"Auth backend URL: {API} (source: {API_SOURCE})")
                 with st.form("login_form"):
                     email = st.text_input("Username/Email address", key="login_email")
                     password = st.text_input("Password", type="password", key="login_password")
