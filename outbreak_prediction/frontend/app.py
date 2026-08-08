@@ -9,6 +9,8 @@ import streamlit as st
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_FILE = BASE_DIR / "data" / "processed_dataset.csv"
+if not DATA_FILE.exists():
+    DATA_FILE = BASE_DIR / "models" / "training_snapshot.csv"
 GEOJSON_FILE = BASE_DIR / "frontend" / "india_states.geojson"
 API_BASE_URL = "http://127.0.0.1:8001"
 
@@ -33,6 +35,12 @@ def load_data():
     data["disease"] = data["disease"].astype(str).str.strip()
     data["cases"] = pd.to_numeric(data["cases"], errors="coerce").fillna(0)
     data["deaths"] = pd.to_numeric(data["deaths"], errors="coerce").fillna(0)
+    if "week" not in data.columns and {"year", "week_num"}.issubset(data.columns):
+        data["week"] = (
+            data["year"].astype(int).astype(str)
+            + "-W"
+            + data["week_num"].astype(int).astype(str).str.zfill(2)
+        )
     return data
 
 

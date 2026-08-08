@@ -1,0 +1,111 @@
+SNo.,Procedure Name,Speciality Classification,Tier,Facility,Ward,Cghs Code No.,Rate (₹)
+14,"Total Red Cell count with MCV,MCH,MCHC,DRW",Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB011,50.00
+28,Activated Partial Thromboplastin Time (APTT),Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB025,290.00
+42,Coomb-s Test - Indirect,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB039,250.00
+56,Body Fluid for Malignant cells,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB053,350.00
+70,Serum Bilirubin total & direct,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB067,150.00
+84,Immunoglobulin G (IgG),Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB081,400.00
+98,Serum Bicarbonate,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB095,200.00
+112,CPK MB/CK MB,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB109,360.00
+126,"Kidney Function Test (KFT)- (Sr.Creatinine,Blood Urea,BUN,Sr.Uric Acid,Sr.Sodium,Sr.Potassium,Urine R/E)",Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB123,500.00
+140,Serum Electrophoresis,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB137,700.00
+154,Carcinoembryonic Antigen (CEA),Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB151,600.00
+168,Cortisol,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB165,550.00
+182,Hepatitis B Virus (HBV) DNA Quantitative.,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB179,3500.00
+196,Acetylcholine receptor (AChR) antibody titre,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB193,4500.00
+210,Anti measles antibody titre (with serum antibody titre),Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB207,1200.00
+224,Serum aldosterone,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB221,1800.00
+238,Insulin associated antibody,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB235,980.00
+252,TORCH Test,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB249,1288.00
+266,Typhidot IgM,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB263,400.00
+280,PLA2 receptor antibody quantitative,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB277,4200.00
+294,Autoimmune Hepatitis Profile,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB291,2960.00
+308,Inhibin B,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB305,1900.00
+322,Comprehensive Allergy Panel,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB319,7000.00
+336,Chikungunya Ig M,Laboratory Investigation,TIER I,NABH,GENERAL WARD,LB333,1000.00
+350,Stress Cardiac MRI,Radiological Investigation,TIER I,NABH,GENERAL WARD,RI012,9200.00
+,2-5 Gy OR Weekly hypofractionation of >5 Gy with 3D CRT plan in 1-2 fractions. No IGRT allowed.),,I,,WARD,,
+724,Lumbar Traction (per session),Physiotherapy,TIER I,NABH,GENERAL WARD,PT002,300.00
+,,,I,,WARD,,
+778,Re-RCT - Posterior,Dental Procedure,TIER I,NABH,GENERAL WARD,DP033,3000.00
+792,Crown - Removal,Dental Procedure,TIER I,NABH,GENERAL WARD,DP047,500.00
+806,Removable Partial Denture - Flexible Per Arch,Dental Procedure,TIER I,NABH,GENERAL WARD,DP061,7500.00
+820,Functional orthodontic appliance,Dental Procedure,TIER I,NABH,GENERAL WARD,DP075,6000.00
+834,Oroantral Fistula closure,Dental Procedure,TIER I,NABH,GENERAL WARD,DP089,5000.00
+848,Sub-Total mandibulectomy without graft,Dental Procedure,TIER I,NABH,GENERAL WARD,DP103,28500.00
+862,Perimetry /Humphrey Visual Field (HVF ) test- Automated- Both Eyes,Ophthalmology Investigation,TIER I,NABH,GENERAL WARD,OI006,800.00
+876,Diurnal variation of IOP - Both Eyes,Ophthalmology Investigation,TIER I,NABH,GENERAL WARD,OI020,1500.00
+890,Subconjunctival/sub-tenon-s injections in one eye,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP001,500.00
+904,Arcuate keratotomy for astigmatism /Limbal Relaxing Incision - Both Eyes,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP015,6800.00
+918,Dacryocystorhinostomy-Plain,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP029,12730.00
+932,Entropion surgery- both lids,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP043,13400.00
+946,Telecanthus correction- Both Eyes,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP057,12730.00
+960,Trabeculotomy /kahook dual blade goniotomy excluding blade cost per eye,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP071,19000.00
+974,PTK- Phototherapeutic keratectomy /PRK for keratoconus per eye,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP085,13400.00
+988,Small Incision Cataract Surgery (SICS) with IOL excluding the cost of IOL per eye,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP099,12730.00
+1002,"Excision Biopsy of lid, conjunctiva, cornea per eye",Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP113,9200.00
+1016,Punctal plug(Collagen/silicone) per eye,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP127,4000.00
+1030,Mucous membrane grafting MMG one eyelid,Ophthalmology Procedure,TIER I,NABH,GENERAL WARD,OP141,19000.00
+1044,Vestibular Evoked Myogenic Potential (VEMP),ENT Investigation,TIER I,NABH,GENERAL WARD,EI010,2750.00
+1058,Myringoplasty,ENT Procedure,TIER I,NABH,GENERAL WARD,EP007,26125.00
+1072,Fracture Reduction of Nasal Bone,ENT Procedure,TIER I,NABH,GENERAL WARD,EP021,12730.00
+1086,Functional Endoscopic Sinus Surgery (FESS) for Antrochoanal polyp,ENT Procedure,TIER I,NABH,GENERAL WARD,EP035,33250.00
+,,Urology Investigation,I,,WARD,,
+1582,Operations for Hydronephrosis Endopyelotomy antegrade,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU018,40850.00
+1596,Operations for Vesicoureteral Reflux (VUR) -Open,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU032,40850.00
+1610,Diverticulectomy- Lap/Endoscopic,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU046,50350.00
+1624,Urethroscopy/ Cystopanendoscopy,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU060,13400.00
+1638,Circumcision,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU074,12730.00
+1652,Operations for Hydrocele - Bilateral,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU088,33250.00
+1666,Donor Nephrectomy (Laparoscopic),Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU102,104500.00
+1680,Single lumen Subclavian Catheterization,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU116,5000.00
+1694,Endoscopic Bulking agent Inject (including cost of bulking agent),Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU130,33250.00
+1708,Resection Bladder Neck Endoscopic / Bladder neck incision / transurethral incision on prostrate,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU144,40850.00
+1722,Cystoscopy with Retrograde Catheter - Bilateral/RGP,Nephrology And Urology Procedure,TIER I,NABH,GENERAL WARD,NU158,26125.00
+1736,Repetitive nerve stimulation (RNS)-Decremental response (before and after neostigmine),Neurology Investigation,TIER I,NABH,GENERAL WARD,NI004,1500.00
+1750,Twist Drill Craniostomy,Neuro-Surgery Procedure,TIER I,NABH,GENERAL WARD,NS009,40850.00
+1764,Peripheral Nerve Surgery - Major,Neuro-Surgery Procedure,TIER I,NABH,GENERAL WARD,NS023,59850.00
+1778,Spinal Bifida Surgery Major,Neuro-Surgery Procedure,TIER I,NABH,GENERAL WARD,NS037,59850.00
+,needle aspiration (TBNA),,I,,WARD,,
+2014,PMMA IOL,Ophthalmology,TIER I,NABH,GENERAL WARD,IMOP07,500(Inclusive of GST).00
+2028,Implantable Cardioverter Defibrillator (Dual Chamber) (ICD/AICD- Dual Chamber),Cardiology,TIER I,NABH,GENERAL WARD,IMCP12,"3,75,000+GST.00"
+2042,Mitral Valve - Biological,Cardiovascular And Cardiac Surgery,TIER I,NABH,GENERAL WARD,IMCV08U100,Unlisted.00
+2056,Cost of Haemorrhoidectomy Stappler,General Surgery,TIER I,NABH,GENERAL WARD,IMGS01U100,Unlisted.00
+2070,Unspecified Implant - Abdomen/GI Surgery,Abdomen/GI Surgery,TIER I,NABH,GENERAL WARD,IMAG04U100,Unlisted.00
+2084,Cost of the Graft Used in Carotid Endarterectomy,Neuro-Surgery,TIER I,NABH,GENERAL WARD,IMNS10U100,Unlisted.00
+2098,Cost of the Implants Used in Lateral mass C1-C2 screw fixation,Neuro-Surgery,TIER I,NABH,GENERAL WARD,IMNS24U100,Unlisted.00
+2112,Cost of the Implants Used in Balloon Kyphoplasty,Neuro-Surgery,TIER I,NABH,GENERAL WARD,IMNS38U100,Unlisted.00
+2126,Cost of the Implants Used in Corrective Osteotomy & Internal Fixation- short bones,Orthopaedics,TIER I,NABH,GENERAL WARD,IMOR13U100,Unlisted.00
+2140,Primary TKR - Oxidized Zirconium (OxZr) Alloy -Tibial Component By Whatsoever Name/ Specifications,Orthopaedics,TIER I,NABH,GENERAL WARD,IMOR27,24280+GST.00
+,,,I,,WARD,,
+2166,Cost of the Implants Used in Spinal Fusion Surgery Cervical/ Lumbar Spine -More than 2 Level,Orthopaedics,TIER I,NABH,GENERAL WARD,IMOR53U100,Unlisted.00
+2180,Neck Biopsy-Excisional (TMH - Head & Neck) (G1S6),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH006,4500.00
+2194,Thorax (Trucut Biopsy) (TMH - Thoracic & Paediatric) (G1S20),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH020,4500.00
+2208,Mandible Curettage (TMH - Head & Neck) (G2S6),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH034,11250.00
+2222,Internal Stenting (TMH - G.I. Surgery) (G2S20),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH048,11250.00
+2236,Thoracoscopy-Diagnostic (TMH - Thoracic & Paediatric) (G2S34),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH062,11250.00
+2250,Microdochectomy (TMH - Breast) (G2S48),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH076,11250.00
+2264,Pharyngectomy-Partial (TMH - Head & Neck) (G3S13),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH090,18000.00
+2278,Hemiglossectomy - Peroral (TMH - Head & Neck) (G3S27),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH104,18000.00
+2292,Gastro-Jejunostomy (TMH - G.I. Surgery) (G3S41),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH118,18000.00
+2306,Fibula Lower End Reconstruction (TMH - Bone & Soft Tissue) (G3S55),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH132,18000.00
+2320,Ulna Lower End Excision (TMH - Bone & Soft Tissue) (G3S69),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH146,18000.00
+2334,Gastric By-Pass (TMH - Thoracic & Paediatric) (G3S83),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH160,18000.00
+2348,Burst Abdomen Suturing (TMH - Thoracic & Paediatric) (G3S97),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH174,18000.00
+2362,Cystoscopy + DJ Stenting (TMH - Genitourinary / Gynaecology) (G3S111),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH188,18000.00
+2376,Buccal/Mucosa Composite Resection/Commando (TMH - Head & Neck) (G4S3),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH202,22500.00
+2390,Laryngectomy - Total (TMH - Head & Neck) (G4S17),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH216,22500.00
+2404,Colectomy Subtotal (TMH - G.I. Surgery) (G4S31),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH230,22500.00
+2418,Amputation - Forequarter (TMH - Bone & Soft Tissue) (G4S45),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH244,22500.00
+2432,Radius Lower End Excision + Wrist Fusion (TMH - Bone & Soft Tissue) (G4S59),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH258,22500.00
+2446,Hemipelvectomy (Paediatric) (TMH - Thoracic & Paediatric) (G4S73),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH272,22500.00
+2460,Vulvectomy - Radical (TMH - Genitourinary / Gynaecology) (G4S87),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH286,22500.00
+2474,Excision of Transnasal Angiofibroma (TMH - Head & Neck) (G5S3),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH300,31500.00
+2488,Knee Arthrodesis with Turnoplasty/Allograft (TMH - Bone & Soft Tissue) (G5S17),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH314,31500.00
+2502,Nephrectomy - Radical + IVC Thrombectomy (TMH - Genitourinary / Gynaecology) (G5S31),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH328,31500.00
+2516,Nephrectomy - Radical (TMH - Genitourinary / Gynaecology) (G5S45),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH342,31500.00
+2530,Abdominosacral Resection (TMH - G.I. Surgery) (G6S9),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH356,40500.00
+2544,Thoracoscopic Lobectomy/ Pneumonectomy (TMH - Thoracic & Paediatric) (G6S23),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH370,40500.00
+2558,Laparoscopic Retroperitoneal Node Dissection (TMH - Genitourinary / Gynaecology) (G6S38),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH384,40500.00
+2572,Groin Node Dissection (Bilateral) (TMH - Genitourinary / Gynaecology) (G6S52),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH398,40500.00
+2586,Minor OT - Drugs/Consumables (Without GA),Cancer Surgery,TIER I,NABH,GENERAL WARD,TMH412,450.00

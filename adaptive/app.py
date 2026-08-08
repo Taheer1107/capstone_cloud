@@ -110,7 +110,9 @@ def query_value(name, default=None):
 
 if query_value("token"):
     st.session_state["token"] = query_value("token")
-    st.session_state["role"] = query_value("role", st.session_state["role"])
+    raw_role = str(query_value("role", st.session_state["role"]) or "").strip().lower()
+    role_aliases = {"p": "patient", "patient": "patient", "d": "doctor", "doctor": "doctor", "n": "nurse", "nurse": "nurse", "a": "admin", "admin": "admin"}
+    st.session_state["role"] = role_aliases.get(raw_role, raw_role)
     st.session_state["profile_id"] = query_value("profile_id", st.session_state["profile_id"])
     st.session_state["name"] = query_value("name", st.session_state["name"])
 
