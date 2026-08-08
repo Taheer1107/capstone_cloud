@@ -5,7 +5,17 @@ import requests
 import streamlit as st
 import streamlit.components.v1 as components
 
-API = os.getenv("AUTH_API_URL", st.secrets.get("AUTH_API_URL", "http://127.0.0.1:5000"))
+AUTH_URL_KEYS = [
+    "AUTH_API_URL",
+    "AUTH_URL",
+    "AUTH_BACKEND_URL",
+    "BACKEND_URL",
+]
+
+API = next((os.environ.get(key) for key in AUTH_URL_KEYS if os.environ.get(key)), None)
+if not API:
+    API = next((st.secrets.get(key) for key in AUTH_URL_KEYS if st.secrets.get(key)), None)
+API = API or "http://127.0.0.1:5000"
 
 MODULES = [
     {
