@@ -1,11 +1,31 @@
 @echo off
+
+REM ================= BACKENDS =================
+
 start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone-adaptive-question-flow\Adapative_Question_flow && python backend.py"
+
 start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone\ER_NON_ER_PREDICTION_module1\triage_v3 && python backend.py"
-start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone\ER_NON_ER_PREDICTION_module1\triage_v3\triage_v3 && python -m streamlit run app.py --server.port 9001"
-start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone-wait-time-prediction\wait-time-prediction && python -m streamlit run 1_app.py --server.port 9002"
-start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone-adaptive-question-flow\Adapative_Question_flow && python -m streamlit run app.py --server.port 9003"
+
 start "" cmd /k "cd /d D:\Capsone_all_branches\Cost_predictor\backend && python -m uvicorn main:app --reload --port 8002"
-start "" cmd /k "cd /d D:\Capsone_all_branches\Cost_predictor\frontend && python -m streamlit run home.py --server.port 9004"
+
 start "" cmd /k "cd /d D:\Capsone_all_branches\outbreak_prediction\backend && python -m uvicorn main:app --reload --port 8001"
-start "" cmd /k "cd /d D:\Capsone_all_branches\outbreak_prediction\frontend && python -m streamlit run app.py --server.port 9005"
+
+
+REM ================= STREAMLIT MODULES =================
+REM These run in the background and DO NOT open browser tabs
+
+start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone\ER_NON_ER_PREDICTION_module1\triage_v3\triage_v3 && python -m streamlit run app.py --server.port 9001 --server.headless true"
+
+start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone-wait-time-prediction\wait-time-prediction && python -m streamlit run 1_app.py --server.port 9002 --server.headless true"
+
+start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone\Capstone-adaptive-question-flow\Adapative_Question_flow && python -m streamlit run app.py --server.port 9003 --server.headless true"
+
+start "" cmd /k "cd /d D:\Capsone_all_branches\Cost_predictor\frontend && python -m streamlit run home.py --server.port 9004 --server.headless true"
+
+start "" cmd /k "cd /d D:\Capsone_all_branches\outbreak_prediction\frontend && python -m streamlit run app.py --server.port 9005 --server.headless true"
+
+
+REM ================= MAIN PORTAL =================
+REM ONLY THIS APPLICATION OPENS THE BROWSER
+
 start "" cmd /k "cd /d D:\Capsone_all_branches\Capstone && python -m streamlit run integrated_triage_app.py --server.port 9000"
