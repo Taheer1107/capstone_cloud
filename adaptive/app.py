@@ -73,7 +73,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-API = "http://127.0.0.1:5000"
+AUTH_URL_KEYS = ["AUTH_API_URL", "AUTH_URL", "AUTH_BACKEND_URL", "BACKEND_URL"]
+API = next((os.environ.get(key) for key in AUTH_URL_KEYS if os.environ.get(key)), None)
+if not API:
+    API = next((st.secrets.get(key) for key in AUTH_URL_KEYS if st.secrets.get(key)), None)
+API = API or "http://127.0.0.1:5000"
 
 # --- STATE MGMT ---
 if "token" not in st.session_state:
@@ -86,11 +90,20 @@ if "name" not in st.session_state:
     st.session_state["name"] = None
 
 query_params = st.query_params
-if query_params.get("token"):
-    st.session_state["token"] = query_params.get("token")[0]
-    st.session_state["role"] = query_params.get("role", [st.session_state["role"]])[0]
-    st.session_state["profile_id"] = query_params.get("profile_id", [st.session_state["profile_id"]])[0]
-    st.session_state["name"] = query_params.get("name", [st.session_state["name"]])[0]
+
+
+def query_value(name, default=None):
+    value = query_params.get(name, default)
+    if isinstance(value, list):
+        return value[0] if value else default
+    return value
+
+
+if query_value("token"):
+    st.session_state["token"] = query_value("token")
+    st.session_state["role"] = query_value("role", st.session_state["role"])
+    st.session_state["profile_id"] = query_value("profile_id", st.session_state["profile_id"])
+    st.session_state["name"] = query_value("name", st.session_state["name"])
 
 
 def get_headers():
